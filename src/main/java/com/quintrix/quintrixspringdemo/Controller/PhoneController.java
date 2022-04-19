@@ -35,7 +35,7 @@ public class PhoneController {
     }
   }
 
-  @RequestMapping(method = RequestMethod.POST, value = "/phones{id}")
+  @RequestMapping(method = RequestMethod.POST, value = "/phones/{id}")
   Phone getPhoneDetails(@PathVariable("id") Long id) {
 
     Optional<Phone> phone = phoneList.stream().filter(c -> c.getId() == id.longValue()).findAny();
