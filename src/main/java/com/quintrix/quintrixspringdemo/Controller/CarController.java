@@ -26,7 +26,7 @@ public class CarController {
   }
 
   @RequestMapping(method = RequestMethod.GET, value = "/cars{id}")
-  Car something(@QueryParam("id") Long id) {
+  Car something(@PathVariable("id") Long id) {
 
     Optional<Car> car =
         carsList.stream().filter(c -> c.getId().longValue() == id.longValue()).findAny();
